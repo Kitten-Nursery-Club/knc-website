@@ -54,9 +54,10 @@ function CmsContent({ html }: CmsContentProps) {
     )
   }
 
+  // eslint-disable-next-line @next/next/no-dangerous-html, react/no-danger
   return (
     <div
-      className="text-white [&>p]:mt-4 [&>h1]:text-4xl [&>h1]:leading-12 [&>h1]:py-8 [&>h2]:text-2xl text-lg font-semibold"
+      className="text-white text-shadow-lg [&>p]:mt-4 wrap-break-word [&>h1]:text-4xl [&>h1]:leading-12 [&>h1]:py-8 [&>h2]:text-2xl text-lg font-semibold"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )

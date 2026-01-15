@@ -10,7 +10,7 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="bg-[#9b7cb0] border-2 border-[#d1d1d1] text-black">
+    <header className="bg-primary border-2 border-[#d1d1d1]">
       <div className="m-auto max-w-6xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
           <div className="flex items-center gap-3">
@@ -23,11 +23,11 @@ export function SiteHeader() {
                 priority
                 className="h-16 w-16"
               />
-              <span className="hidden text-lg font-heading md:inline">KNC</span>
+              <span className="text-lg font-heading text-shadow-lg">Kitten Nursery Club</span>
             </Link>
           </div>
 
-          <nav className="hidden items-center gap-6 text-xs font-heading md:flex">
+          <nav className="hidden items-center gap-6 text-xs font-heading">
             {NAV_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="hover:underline">
                 {link.label}
@@ -35,12 +35,12 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="relative md:hidden">
+          <div className="relative">
             <MobileMenuToggle open={menuOpen} onToggle={() => setMenuOpen((open) => !open)} />
 
             {menuOpen ? (
               <div
-                className={`absolute right-0 top-full mt-2 min-w-[180px] ${mobileMenuSurfaceClasses}`}
+                className={`absolute z-1 right-0 top-full mt-2 min-w-[180px] ${mobileMenuSurfaceClasses}`}
               >
                 <nav className="flex flex-col divide-y divide-black/10 font-heading text-sm">
                   {NAV_LINKS.map((link) => (

@@ -4,7 +4,7 @@ export type NavLink = {
 }
 
 export const NAV_LINKS: ReadonlyArray<NavLink> = [
-  { href: "/adopt", label: "Adopt" },
+  { href: "/adoption", label: "Adopt" },
   { href: "/volunteer", label: "Volunteer" },
   { href: "/donate", label: "Donate" },
   { href: "/resources", label: "Resources" },

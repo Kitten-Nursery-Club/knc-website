@@ -5,7 +5,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[#d1d1d1] bg-[#9b7cb0] text-black">
+    <footer className="border-t-4 border-[#d1d1d1] bg-primary text-black">
       <div className="m-auto flex max-w-6xl items-center flex-col gap-6 px-6 py-6">
         <nav className="flex flex-wrap items-center gap-4 text-xs font-heading md:gap-6">
           {NAV_LINKS.map((link) => (

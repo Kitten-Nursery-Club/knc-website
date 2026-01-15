@@ -7,7 +7,7 @@ export type ButtonProps = PropsWithChildren<
 >
 
 const baseButtonClasses =
-  "inline-flex items-center justify-center bg-[#666] p-2 text-black text-6xl shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_2px_#000]"
+  "inline-flex font-heading items-center cursor-pointer justify-center bg-[#d1d1d1] p-2 text-black shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_2px_#000] hover:bg-gray-100 transition-all duration-200"
 
 export function Button({ className = "", children, ...props }: ButtonProps) {
   return (

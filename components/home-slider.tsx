@@ -35,17 +35,17 @@ export function HomeSlider() {
       >
         <div className="flex">
           {SLIDES.map((slide) => (
-            <div key={slide.src} className="relative min-w-0 border-4 border-[#d1d1d1] flex-[0_0_100%]">
-              <div className="flex gap-4 items-center justify-end h-10 bg-[#9b7cb0] px-4">
-                <p className="font-heading">{"BABIES<3"}</p>
-                <div className="h-6 w-6 bg-[#666] shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_0px_black]">
+            <div key={slide.src} className="mr-4 relative min-w-0 border-4 border-[#d1d1d1] flex-[0_0_100%]">
+              <div className="flex gap-4 items-center justify-end h-10 bg-primary text-black px-4">
+                <p className="font-heading">{"babies<3"}</p>
+                <div className="h-6 w-6 bg-[#d1d1d1] shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_0px_black]">
                   <Icon>maximize</Icon>
                 </div>
-                <div className="h-6 w-6 bg-[#666] shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_0px_black]">
+                <div className="h-6 w-6 bg-[#d1d1d1] shadow-[-2px_-2px_0px_#d1d1d1,2px_2px_0px_black]">
                   <Icon>favorite</Icon>
                 </div>
               </div>
-              <div className="relative h-[320px] w-full">
+              <div className="relative border-t border-[#d1d1d1] h-[320px] w-full">
                 <Image
                   src={slide.src}
                   alt={slide.alt}
