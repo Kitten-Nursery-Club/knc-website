@@ -30,10 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded&display=optional"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded&display=block" rel="stylesheet" />
       </head>
       <body className={`${sofiaSans.variable} ${pressStart.variable} antialiased`}>
         <Providers>
