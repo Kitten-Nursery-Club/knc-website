@@ -1,5 +1,10 @@
 import { Button } from "@/components/button"
 import apiClient from "@/lib/api/client"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Kitten Nursery Club | Donate"
+}
 
 export const revalidate = 300
 

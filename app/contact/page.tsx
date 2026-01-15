@@ -1,6 +1,6 @@
 import { Button } from "@/components/button"
 import apiClient from "@/lib/api/client"
-
+import type { Metadata } from "next"
 export const revalidate = 300
 
 interface WordpressPage {
@@ -8,6 +8,10 @@ interface WordpressPage {
   content?: {
     rendered?: string
   }
+}
+
+export const metadata: Metadata = {
+  title: "Kitten Nursery Club | Contact"
 }
 
 const CONTACT_PAGE_SLUG = "contact"
