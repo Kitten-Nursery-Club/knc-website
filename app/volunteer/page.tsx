@@ -1,5 +1,5 @@
 import { Button } from "@/components/button"
-import apiClient from "@/lib/api/client"
+import { fetchPageHtml } from "@/lib/api/fetch-page-html"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -8,42 +8,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 300
 
-interface WordpressPage {
-  slug: string
-  content?: {
-    rendered?: string
-  }
-}
-
 const VOLUNTEER_PAGE_SLUG = "volunteer"
-
-async function fetchVolunteerPageHtml(): Promise<string | null> {
-  const baseUrl = process.env.NEXT_PUBLIC_WP_API_URL
-
-  if (!baseUrl) {
-    return null
-  }
-
-  try {
-    const baseURL = baseUrl.replace(/\/$/, "")
-    const response = await apiClient.get<WordpressPage[]>("/pages", {
-      baseURL,
-      params: { slug: VOLUNTEER_PAGE_SLUG },
-    })
-
-    const page = response.data.find((entry) => entry.slug === VOLUNTEER_PAGE_SLUG)
-    const html = page?.content?.rendered
-
-    if (!html) {
-      return null
-    }
-
-    return html
-  } catch (error) {
-    console.error("Failed to load volunteer page content", error)
-    return null
-  }
-}
 
 type CmsContentProps = {
   html: string | null
@@ -60,14 +25,14 @@ function CmsContent({ html }: CmsContentProps) {
 
   return (
     <div
-      className="text-white text-shadow-lg [&>p]:mt-4 wrap-break-word [&>h1]:text-4xl [&>h1]:leading-12 [&_hr]:my-8 [&_figure_img]:object-cover [&_figure_img]:w-full [&_figure]:max-w-sm [&_figure]:my-12 [&_figure]:m-auto [&_figure]:border-2 [&_figure]:border-[#d1d1d1] leading-8 [&_ol]:px-4 [&_ol]:md:px-8 [&>ol]:m-auto [&_li]:mt-4 [&_*.has-text-align-center]:text-center [&>ol>li]:leading-10 [&>ol]:list-decimal [&>h1]:py-8 [&>h3]:mt-8 [&>h2]:text-2xl text-lg font-semibold"
+      className="text-white [&>p]:mt-4 wrap-break-word [&>h1]:text-4xl [&>h1]:leading-12 [&_hr]:my-8 [&_figure_img]:object-cover [&_figure_img]:w-full [&_figure]:max-w-sm [&_figure]:my-12 [&_figure]:m-auto [&_figure]:border-2 [&_figure]:border-[#d1d1d1] leading-8 [&_ol]:px-4 [&_ol]:md:px-8 [&>ol]:m-auto [&_li]:mt-4 [&_*.has-text-align-center]:text-center [&>ol>li]:leading-10 [&>ol]:list-decimal [&>h1]:py-8 [&>h3]:mt-8 [&>h2]:text-2xl text-lg font-semibold"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )
 }
 
 export default async function VolunteerPage() {
-  const html = await fetchVolunteerPageHtml()
+  const html = await fetchPageHtml(VOLUNTEER_PAGE_SLUG, "volunteer page")
 
   return (
     <main className="px-8 pb-20 min-h-screen space-y-10">

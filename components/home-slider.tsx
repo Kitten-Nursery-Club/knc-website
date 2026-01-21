@@ -1,5 +1,6 @@
 "use client"
 
+import AutoScroll from "embla-carousel-auto-scroll"
 import Autoplay from "embla-carousel-autoplay"
 import useEmblaCarousel from "embla-carousel-react"
 import Image from "next/image"
@@ -14,7 +15,7 @@ const SLIDES = [
 ]
 
 export function HomeSlider() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 4000 })])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", startIndex: 1 }, [Autoplay(), AutoScroll({ speed: 1.5 })])
 
   useEffect(() => {
     if (!emblaApi) return
@@ -30,7 +31,6 @@ export function HomeSlider() {
   return (
     <div className="mb-10">
       <div
-        className="overflow-hidden"
         ref={emblaRef}
       >
         <div className="flex">
@@ -45,7 +45,7 @@ export function HomeSlider() {
                   <Icon>favorite</Icon>
                 </div>
               </div>
-              <div className="relative border-t border-[#d1d1d1] h-[320px] w-full">
+              <div className="relative border-t border-[#d1d1d1] h-40 md:h-80 w-full">
                 <Image
                   src={slide.src}
                   alt={slide.alt}

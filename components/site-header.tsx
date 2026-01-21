@@ -40,7 +40,7 @@ export function SiteHeader() {
 
             {menuOpen ? (
               <div
-                className={`absolute z-1 right-0 top-full mt-2 min-w-[180px] ${mobileMenuSurfaceClasses}`}
+                className={`absolute z-1 right-0 top-full mt-2 min-w-45 ${mobileMenuSurfaceClasses}`}
               >
                 <nav className="flex flex-col divide-y divide-black/10 font-heading text-sm">
                   {NAV_LINKS.map((link) => (

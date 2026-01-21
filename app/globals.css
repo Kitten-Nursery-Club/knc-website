@@ -1,21 +1,26 @@
 @import "tailwindcss";
 
 @theme inline {
-    --color-primary: rgb(240, 187, 212);
-    --color-secondary: rgb(145, 172, 173);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-sofia-sans);
-    --font-heading: var(--font-press-start);
+  --color-primary: rgb(240, 187, 212);
+  --color-secondary: rgb(145, 172, 173);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sofia-sans);
+  --font-heading: var(--font-press-start);
 }
 
 :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
-    background-color: var(--color-secondary);
+  background-color: var(--color-background);
+  opacity: 0.8;
+  background-image: radial-gradient(var(--color-primary) 1px, transparent 0.5px), radial-gradient(var(--color-secondary) 2px, var(--color-secondary) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  overflow-x: hidden;
 }
 
 h1,
@@ -25,5 +30,5 @@ h4,
 h5,
 h6,
 .font-heading {
-    font-family: var(--font-press-start), "Press Start 2P", cursive, system-ui, sans-serif;
+  font-family: var(--font-press-start), "Press Start 2P", cursive, system-ui, sans-serif;
 }
