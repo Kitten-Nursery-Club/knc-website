@@ -29,7 +29,7 @@ export function HomeSlider() {
   }, [emblaApi])
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 overflow-x-hidden -mx-8">
       <div
         ref={emblaRef}
       >
@@ -45,7 +45,7 @@ export function HomeSlider() {
                   <Icon>favorite</Icon>
                 </div>
               </div>
-              <div className="relative border-t border-[#d1d1d1] h-40 md:h-80 w-full">
+              <div className="relative border-t border-[#d1d1d1] h-60 md:h-80 w-full">
                 <Image
                   src={slide.src}
                   alt={slide.alt}
