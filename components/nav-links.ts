@@ -6,6 +6,7 @@ export type NavLink = {
 export const NAV_LINKS: ReadonlyArray<NavLink> = [
   { href: "/adoption", label: "Adopt" },
   { href: "/volunteer", label: "Volunteer" },
+  { href: "/store", label: "Store" },
   { href: "/donate", label: "Donate" },
   { href: "/contact", label: "Contact" },
 ] as const
