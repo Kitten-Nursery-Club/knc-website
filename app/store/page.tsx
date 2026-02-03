@@ -14,7 +14,7 @@ export default async function StorePage() {
     <div className="min-h-[calc(100vh-5rem)] px-4 py-8">
       <h1 className="mb-8 font-heading text-3xl">Store</h1>
       <p className="mb-8">
-        Support our kittens! All proceeds go towards caring for homeless kittens.
+        Support our kittens! All proceeds go towards caring for our kittens.
       </p>
       {products.length === 0 ? (
         <p>No products available at this time.</p>
